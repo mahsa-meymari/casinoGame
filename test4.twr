@@ -1,0 +1,161 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf
+
+Design file:              test4.ncd
+Physical constraint file: test4.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+clear       |   -0.254(R)|      FAST  |    1.939(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock roll
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+clear       |   -0.400(R)|      FAST  |    2.280(R)|      SLOW  |m_OBUF            |   0.000|
+            |   -0.298(R)|      FAST  |    2.093(R)|      SLOW  |roll_IBUF_BUFG    |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock stop
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+clear       |    0.106(R)|      FAST  |    0.945(R)|      SLOW  |m_OBUF            |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+B<0>        |         8.404(R)|      SLOW  |         3.628(R)|      FAST  |clk_BUFGP         |   0.000|
+B<1>        |         8.522(R)|      SLOW  |         3.374(R)|      FAST  |clk_BUFGP         |   0.000|
+B<2>        |         8.743(R)|      SLOW  |         3.378(R)|      FAST  |clk_BUFGP         |   0.000|
+B<3>        |         8.917(R)|      SLOW  |         3.486(R)|      FAST  |clk_BUFGP         |   0.000|
+m           |         9.598(R)|      SLOW  |         3.760(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock roll to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+S<0>        |         7.757(F)|      SLOW  |         3.244(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<1>        |         7.658(F)|      SLOW  |         3.182(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<2>        |         7.736(F)|      SLOW  |         3.231(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<3>        |         7.696(F)|      SLOW  |         3.202(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<4>        |         7.710(F)|      SLOW  |         3.208(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<5>        |         7.559(F)|      SLOW  |         3.112(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<6>        |         7.575(F)|      SLOW  |         3.136(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+S<7>        |         7.564(F)|      SLOW  |         3.140(F)|      FAST  |roll_IBUF_BUFG    |   0.000|
+Score0<0>   |         8.017(R)|      SLOW  |         3.398(R)|      FAST  |m_OBUF            |   0.000|
+Score0<1>   |         7.897(R)|      SLOW  |         3.343(R)|      FAST  |m_OBUF            |   0.000|
+Score0<2>   |         8.016(R)|      SLOW  |         3.397(R)|      FAST  |m_OBUF            |   0.000|
+Score0<3>   |         7.991(R)|      SLOW  |         3.396(R)|      FAST  |m_OBUF            |   0.000|
+Score0<4>   |         8.208(R)|      SLOW  |         3.503(R)|      FAST  |m_OBUF            |   0.000|
+Score0<5>   |         7.998(R)|      SLOW  |         3.410(R)|      FAST  |m_OBUF            |   0.000|
+Score0<6>   |         7.986(R)|      SLOW  |         3.408(R)|      FAST  |m_OBUF            |   0.000|
+Score0<7>   |         7.982(R)|      SLOW  |         3.395(R)|      FAST  |m_OBUF            |   0.000|
+c<0>        |         7.571(R)|      SLOW  |         3.120(R)|      FAST  |roll_IBUF_BUFG    |   0.000|
+c<1>        |         7.776(R)|      SLOW  |         3.262(R)|      FAST  |roll_IBUF_BUFG    |   0.000|
+c<2>        |         7.831(R)|      SLOW  |         3.262(R)|      FAST  |roll_IBUF_BUFG    |   0.000|
+c<3>        |         7.828(R)|      SLOW  |         3.262(R)|      FAST  |roll_IBUF_BUFG    |   0.000|
+user        |         7.465(R)|      SLOW  |         3.131(R)|      FAST  |m_OBUF            |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock stop to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+Score0<0>   |         6.682(R)|      SLOW  |         2.892(R)|      FAST  |m_OBUF            |   0.000|
+Score0<1>   |         6.562(R)|      SLOW  |         2.837(R)|      FAST  |m_OBUF            |   0.000|
+Score0<2>   |         6.681(R)|      SLOW  |         2.891(R)|      FAST  |m_OBUF            |   0.000|
+Score0<3>   |         6.656(R)|      SLOW  |         2.890(R)|      FAST  |m_OBUF            |   0.000|
+Score0<4>   |         6.873(R)|      SLOW  |         2.997(R)|      FAST  |m_OBUF            |   0.000|
+Score0<5>   |         6.663(R)|      SLOW  |         2.904(R)|      FAST  |m_OBUF            |   0.000|
+Score0<6>   |         6.651(R)|      SLOW  |         2.902(R)|      FAST  |m_OBUF            |   0.000|
+Score0<7>   |         6.647(R)|      SLOW  |         2.889(R)|      FAST  |m_OBUF            |   0.000|
+user        |         6.130(R)|      SLOW  |         2.625(R)|      FAST  |m_OBUF            |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.428|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock roll
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.473|         |         |         |
+roll           |    1.384|    1.819|    1.456|    1.574|
+stop           |    1.384|         |   -0.075|   -0.075|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock stop
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+roll           |    1.384|    1.819|         |         |
+stop           |    1.384|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+roll           |m              |    7.243|
+stop           |m              |    5.908|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Jan 30 17:21:52 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 707 MB
+
+
+

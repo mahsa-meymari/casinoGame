@@ -1,0 +1,421 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : test4.vf
+// /___/   /\     Timestamp : 01/30/2018 20:33:29
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog D:/digitalLogic_slides/random/prj1/test4.vf -w D:/digitalLogic_slides/random/prj1/test4.sch
+//Design Name: test4
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module COMPM8_HXILINX_test4 (GT, LT, A, B);
+    
+
+   output GT;
+   output LT;
+
+   input  [7:0] A;
+   input  [7:0] B;
+
+
+   assign GT = A > B  ;
+   assign LT = A < B  ;
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module FD8CE_HXILINX_test4(Q, C, CE, CLR, D);
+
+   
+   output [7:0]       Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input  [7:0]       D;
+   
+   reg    [7:0]       Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+          Q <= D;
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB4CE_HXILINX_test4(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 4'b1111;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+	  {Q3, Q2, Q1,Q0} <= {Q3, Q2, Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module ADD4_HXILINX_test4 (CO, OFL, S0, S1, S2, S3, A0, A1, A2, A3, B0, B1, B2, B3 , CI);
+   
+   output      CO;
+   output      OFL;
+   output      S0;
+   output      S1;
+   output      S2;
+   output      S3;
+
+   input       A0;
+   input       A1;
+   input       A2;
+   input       A3;
+   input       B0;
+   input       B1;
+   input       B2;
+   input       B3;
+   input       CI;
+
+
+   assign   {CO, S3, S2, S1, S0} = {A3, A2, A1, A0} + {B3, B2, B1, B0} + CI;
+   assign   OFL = (A3 & B3 & (~S3)) | ((~A3) & (~B3) & S3); 
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module ADD8_HXILINX_test4 (CO, OFL, S, A, B, CI);
+
+
+   output 	      CO;
+   output 	      OFL;
+   output [7:0]       S;
+
+   input  [7:0]       A;
+   input  [7:0]       B;
+   input              CI;
+
+   assign   {CO, S} = A + B + CI;
+   assign   OFL     = ( A[7] & B[7] & (~S[7])) | ((~A[7]) & (~B[7]) & S[7]);
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module FD4CE_HXILINX_test4(Q0, Q1, Q2, Q3, C, CE, CLR, D0, D1, D2, D3);
+   
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+          {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module FTCE_HXILINX_test4(Q, C, CE, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(CE) 
+          if(T)
+            Q <= !Q;
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module test4(clear, 
+             clk, 
+             roll, 
+             stop, 
+             B, 
+             c, 
+             m, 
+             S, 
+             Score0, 
+             Score1, 
+             user, 
+             Win0, 
+             Win1);
+
+    input clear;
+    input clk;
+    input roll;
+    input stop;
+   output [3:0] B;
+   output [7:0] c;
+   output m;
+   output [7:0] S;
+   output [7:0] Score0;
+   output [7:0] Score1;
+   output user;
+   output Win0;
+   output Win1;
+   
+   wire A1;
+   wire A2;
+   wire [7:0] Max;
+   wire [7:0] SM;
+   wire XLXN_2;
+   wire XLXN_56;
+   wire XLXN_58;
+   wire XLXN_103;
+   wire XLXN_107;
+   wire XLXN_108;
+   wire XLXN_112;
+   wire XLXN_113;
+   wire XLXN_194;
+   wire XLXN_333;
+   wire XLXN_470;
+   wire XLXN_474;
+   wire XLXN_599;
+   wire XLXN_615;
+   wire [7:0] XLXN_621;
+   wire XLXN_623;
+   wire XLXN_638;
+   wire XLXN_671;
+   wire XLXN_811;
+   wire XLXN_955;
+   wire XLXN_967;
+   wire XLXN_972;
+   wire [7:0] XLXN_975;
+   wire XLXN_977;
+   wire XLXN_982;
+   wire XLXN_986;
+   wire XLXN_987;
+   wire [3:0] B_DUMMY;
+   wire [7:0] Score0_DUMMY;
+   wire [7:0] Score1_DUMMY;
+   wire user_DUMMY;
+   wire [7:0] S_DUMMY;
+   wire [7:0] c_DUMMY;
+   wire m_DUMMY;
+   
+   assign B[3:0] = B_DUMMY[3:0];
+   assign c[7:0] = c_DUMMY[7:0];
+   assign m = m_DUMMY;
+   assign S[7:0] = S_DUMMY[7:0];
+   assign Score0[7:0] = Score0_DUMMY[7:0];
+   assign Score1[7:0] = Score1_DUMMY[7:0];
+   assign user = user_DUMMY;
+   VCC  XLXI_11 (.P(XLXN_2));
+   (* HU_SET = "XLXI_24_2" *) 
+   CB4CE_HXILINX_test4  XLXI_24 (.C(clk), 
+                                .CE(XLXN_2), 
+                                .CLR(XLXN_58), 
+                                .CEO(), 
+                                .Q0(XLXN_103), 
+                                .Q1(A1), 
+                                .Q2(A2), 
+                                .Q3(XLXN_113), 
+                                .TC());
+   AND2  XLXI_32 (.I0(A1), 
+                 .I1(A2), 
+                 .O(XLXN_56));
+   OR2  XLXI_33 (.I0(XLXN_56), 
+                .I1(clear), 
+                .O(XLXN_58));
+   (* HU_SET = "XLXI_34_1" *) 
+   ADD4_HXILINX_test4  XLXI_34 (.A0(XLXN_103), 
+                               .A1(A1), 
+                               .A2(A2), 
+                               .A3(XLXN_113), 
+                               .B0(XLXN_108), 
+                               .B1(XLXN_107), 
+                               .B2(XLXN_107), 
+                               .B3(XLXN_107), 
+                               .CI(XLXN_112), 
+                               .CO(), 
+                               .OFL(), 
+                               .S0(B_DUMMY[0]), 
+                               .S1(B_DUMMY[1]), 
+                               .S2(B_DUMMY[2]), 
+                               .S3(B_DUMMY[3]));
+   VCC  XLXI_42 (.P(XLXN_108));
+   GND  XLXI_43 (.G(XLXN_107));
+   GND  XLXI_44 (.G(XLXN_112));
+   (* HU_SET = "XLXI_60_0" *) 
+   FD4CE_HXILINX_test4  XLXI_60 (.C(roll), 
+                                .CE(XLXN_194), 
+                                .CLR(clear), 
+                                .D0(B_DUMMY[0]), 
+                                .D1(B_DUMMY[1]), 
+                                .D2(B_DUMMY[2]), 
+                                .D3(B_DUMMY[3]), 
+                                .Q0(c_DUMMY[0]), 
+                                .Q1(c_DUMMY[1]), 
+                                .Q2(c_DUMMY[2]), 
+                                .Q3(c_DUMMY[3]));
+   VCC  XLXI_95 (.P(XLXN_194));
+   (* HU_SET = "XLXI_138_4" *) 
+   ADD8_HXILINX_test4  XLXI_138 (.A(S_DUMMY[7:0]), 
+                                .B(c_DUMMY[7:0]), 
+                                .CI(XLXN_333), 
+                                .CO(), 
+                                .OFL(), 
+                                .S(SM[7:0]));
+   GND  XLXI_139 (.G(XLXN_333));
+   (* HU_SET = "XLXI_140_3" *) 
+   FD8CE_HXILINX_test4  XLXI_140 (.C(XLXN_474), 
+                                 .CE(XLXN_470), 
+                                 .CLR(XLXN_638), 
+                                 .D(SM[7:0]), 
+                                 .Q(S_DUMMY[7:0]));
+   GND  XLXI_151 (.G(c_DUMMY[6]));
+   GND  XLXI_152 (.G(c_DUMMY[7]));
+   GND  XLXI_153 (.G(c_DUMMY[5]));
+   VCC  XLXI_161 (.P(XLXN_470));
+   INV  XLXI_162 (.I(roll), 
+                 .O(XLXN_474));
+   (* HU_SET = "XLXI_227_5" *) 
+   FTCE_HXILINX_test4 #( .INIT(1'b0) ) XLXI_227 (.C(m_DUMMY), 
+                                .CE(XLXN_599), 
+                                .CLR(clear), 
+                                .T(XLXN_599), 
+                                .Q(user_DUMMY));
+   VCC  XLXI_228 (.P(XLXN_599));
+   (* HU_SET = "XLXI_232_6" *) 
+   FD8CE_HXILINX_test4  XLXI_232 (.C(XLXN_987), 
+                                 .CE(XLXN_615), 
+                                 .CLR(clear), 
+                                 .D(XLXN_621[7:0]), 
+                                 .Q(Score0_DUMMY[7:0]));
+   (* HU_SET = "XLXI_233_7" *) 
+   ADD8_HXILINX_test4  XLXI_233 (.A(Score0_DUMMY[7:0]), 
+                                .B(S_DUMMY[7:0]), 
+                                .CI(XLXN_623), 
+                                .CO(), 
+                                .OFL(), 
+                                .S(XLXN_621[7:0]));
+   VCC  XLXI_235 (.P(XLXN_615));
+   GND  XLXI_238 (.G(XLXN_623));
+   NOR2  XLXI_249 (.I0(c_DUMMY[2]), 
+                  .I1(c_DUMMY[1]), 
+                  .O(XLXN_671));
+   OR2  XLXI_264 (.I0(XLXN_671), 
+                 .I1(stop), 
+                 .O(XLXN_638));
+   OR2  XLXI_268 (.I0(XLXN_967), 
+                 .I1(stop), 
+                 .O(m_DUMMY));
+   INV  XLXI_338 (.I(B_DUMMY[0]), 
+                 .O(XLXN_811));
+   NOR3  XLXI_381 (.I0(XLXN_811), 
+                  .I1(B_DUMMY[1]), 
+                  .I2(B_DUMMY[2]), 
+                  .O(XLXN_955));
+   AND2  XLXI_382 (.I0(roll), 
+                  .I1(XLXN_955), 
+                  .O(XLXN_967));
+   GND  XLXI_388 (.G(c_DUMMY[4]));
+   (* HU_SET = "XLXI_389_8" *) 
+   FD8CE_HXILINX_test4  XLXI_389 (.C(XLXN_986), 
+                                 .CE(XLXN_972), 
+                                 .CLR(clear), 
+                                 .D(XLXN_975[7:0]), 
+                                 .Q(Score1_DUMMY[7:0]));
+   (* HU_SET = "XLXI_390_9" *) 
+   ADD8_HXILINX_test4  XLXI_390 (.A(Score1_DUMMY[7:0]), 
+                                .B(S_DUMMY[7:0]), 
+                                .CI(XLXN_977), 
+                                .CO(), 
+                                .OFL(), 
+                                .S(XLXN_975[7:0]));
+   VCC  XLXI_391 (.P(XLXN_972));
+   GND  XLXI_392 (.G(XLXN_977));
+   AND2  XLXI_394 (.I0(user_DUMMY), 
+                  .I1(m_DUMMY), 
+                  .O(XLXN_986));
+   AND2  XLXI_395 (.I0(m_DUMMY), 
+                  .I1(XLXN_982), 
+                  .O(XLXN_987));
+   INV  XLXI_396 (.I(user_DUMMY), 
+                 .O(XLXN_982));
+   (* HU_SET = "XLXI_452_10" *) 
+   COMPM8_HXILINX_test4  XLXI_452 (.A(Max[7:0]), 
+                                  .B(Score0_DUMMY[7:0]), 
+                                  .GT(), 
+                                  .LT(Win0));
+   (* HU_SET = "XLXI_453_11" *) 
+   COMPM8_HXILINX_test4  XLXI_453 (.A(Max[7:0]), 
+                                  .B(Score1_DUMMY[7:0]), 
+                                  .GT(), 
+                                  .LT(Win1));
+   VCC  XLXI_454 (.P(Max[1]));
+   VCC  XLXI_455 (.P(Max[2]));
+   GND  XLXI_456 (.G(Max[0]));
+   GND  XLXI_457 (.G(Max[3]));
+   VCC  XLXI_458 (.P(Max[7]));
+   VCC  XLXI_465 (.P(Max[6]));
+   GND  XLXI_466 (.G(Max[5]));
+   GND  XLXI_467 (.G(Max[4]));
+endmodule

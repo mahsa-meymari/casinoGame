@@ -1,0 +1,4 @@
+select figure at 3156 2387 8 -branches -sn=1
+select figure at 3068 2472 8 -branches -sn=1
+undo
+undo

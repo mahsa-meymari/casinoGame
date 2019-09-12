@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/digitalLogic_slides/random/prj1/test4_test4_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="test4_test4_sch_tb" />
+            <top_module name="vcomponents" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/test4_test4_sch_tb/clear" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clear</obj_property>
+      <obj_property name="ObjectShortName">clear</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/stop" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/user" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">user</obj_property>
+      <obj_property name="ObjectShortName">user</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/c" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">c[7:0]</obj_property>
+      <obj_property name="ObjectShortName">c[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/roll" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">roll</obj_property>
+      <obj_property name="ObjectShortName">roll</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/m" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">m</obj_property>
+      <obj_property name="ObjectShortName">m</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/b" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">b[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/score0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">score0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">score0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test4_test4_sch_tb/score1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">score1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">score1[7:0]</obj_property>
+   </wvobject>
+</wave_config>

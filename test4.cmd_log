@@ -1,0 +1,51 @@
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 test4.ngc test4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o test4_map.ncd test4.ngd test4.pcf 
+par -w -intstyle ise -ol high -mt off test4_map.ncd test4.ncd test4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml test4.twx test4.ncd -o test4.twr test4.pcf 
+xst -intstyle ise -ifn "D:/digitalLogic_slides/random/prj1/test4.xst" -ofn "D:/digitalLogic_slides/random/prj1/test4.syr" 
